@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Storra - Ecommerce System</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;900&family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'DM Sans', system-ui, sans-serif;
+            background-color: #f8f8f6;
+        }
+        .font-nunito {
+            font-family: 'Nunito', sans-serif;
+        }
+        /* Custom styles for Hero component specific inline layouts */
+        .spark-gradient-up-orange { fill: url(#skE8873A1); }
+        .spark-gradient-up-green { fill: url(#sk22C55E1); }
+        .spark-gradient-down-teal { fill: url(#sk2DD4BF0); }
+        .spark-gradient-up-purple { fill: url(#sk9333EA1); }
+    </style>
+</head>
+<body class="text-[#111] antialiased overflow-x-hidden">
+
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-[100] flex items-center transition-all duration-500 font-nunito h-[88px] bg-[#f8f8f6]" aria-label="Main navigation">
+        <div class="w-full max-w-[1440px] mx-auto px-8 flex items-center justify-between">
+            <a href="#home" class="flex items-center gap-3 group transition-transform duration-300 hover:scale-[1.02]">
+                <div class="relative w-10 h-10 flex-shrink-0">
+                    <div class="absolute inset-0 bg-[#C64B17] blur-lg opacity-20 group-hover:opacity-40 transition-opacity"></div>
+                    <img src="./assets/Storra_HD.png" alt="Storra Icon" class="relative w-full h-full object-cover rounded-xl shadow-lg bg-white" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgZmlsbD0iI0U4ODczQSI+PHJlY3Qgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiByeD0iOCIvPjwvc3ZnPg=='" />
+                </div>
+                <img src="./assets/storra_black.png" alt="Storra" class="h-6 w-auto object-contain brightness-110" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
+                <span style="display:none;" class="text-xl font-extrabold tracking-tight">Storra</span>
+            </a>
+
+            <div class="hidden lg:flex items-center gap-10">
+                <ul class="flex items-center gap-8 text-[15px] font-bold tracking-wide list-none m-0 p-0">
+                    <li><a href="#problem" class="text-slate-700 hover:text-[#E8873A] transition-colors duration-300 nav-link">Problem</a></li>
+                    <li><a href="#features" class="text-slate-700 hover:text-[#E8873A] transition-colors duration-300 nav-link">Features</a></li>
+                    <li><a href="#pricing" class="text-slate-700 hover:text-[#E8873A] transition-colors duration-300 nav-link">Pricing</a></li>
+                </ul>
+
+                <div class="h-6 w-[1px] bg-slate-300 mx-2"></div>
+
+                <div class="flex items-center gap-4 cursor-pointer">
+                    <a href="https://blueprintsoftware.in" class="text-[14px] font-bold text-slate-700 py-2 px-5 rounded-lg border border-slate-300 hover:bg-slate-100 hover:text-slate-500 transition-all duration-300">
+                        Blueprint Software
+                    </a>
+                    <a href="#contact" class="relative overflow-hidden bg-[#E8873A] text-white py-2.5 px-6 rounded-lg font-extrabold text-sm uppercase tracking-wider shadow-[0_10px_25px_rgba(232,135,58,0.2)] hover:shadow-[0_15px_35px_rgba(232,135,58,0.4)] hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300">
+                        Launch Store
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" style="min-height: 100vh; background: #111111; display: flex; align-items: center; justify-content: center; padding: 48px 36px; overflow: hidden; position: relative; margin-top: 88px;">
+        <div style="position: absolute; top: -100px; left: -100px; width: 600px; height: 600px; background: radial-gradient(circle, rgba(232,135,58,0.08) 0%, transparent 70%); pointer-events: none;"></div>
+        <div style="position: absolute; bottom: -60px; right: 10%; width: 500px; height: 500px; background: radial-gradient(circle, rgba(232,135,58,0.05) 0%, transparent 70%); pointer-events: none;"></div>
+
+        <div style="display: flex; align-items: center; justify-content: space-between; max-width: 1600px; width: 100%; position: relative; z-index: 2; flex-wrap: wrap; gap: 40px;">
+            
+            <div style="flex: 1 1 500px; min-width: 340px; max-width: 600px;">
+                <div style="display: inline-flex; align-items: center; gap: 7px; background: rgba(232,135,58,0.12); border: 1px solid rgba(232,135,58,0.3); border-radius: 100px; padding: 6px 14px; margin-bottom: 26px;">
+                    <span style="width: 6px; height: 6px; border-radius: 50%; background: #E8873A; display: inline-block;"></span>
+                    <span style="font-size: 10px; color: #E8873A; font-weight: 800; letter-spacing: 0.09em; text-transform: uppercase;">Built by Blueprint Software</span>
+                </div>
+
+                <h1 style="font-size: clamp(2.2rem, 3.5vw, 3.2rem); font-weight: 900; line-height: 1.05; color: #FFF; margin: 0 0 20px; letter-spacing: -0.04em;">
+                    Your store. Your control.<br />
+                    <span style="background-image: linear-gradient(90deg, #E8873A, #F0A05A); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Forever.</span>
+                </h1>
+
+                <p style="color: #A0A0A0; font-size: 14px; line-height: 1.7; margin: 0 0 40px; max-width: 520px;">
+                    Storra is a complete ecommerce operating system for entrepreneurs and retail businesses that need full control, clear order tracking and lifetime ownership.
+                </p>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+                    <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 12px 16px;">
+                        <div style="color: #FFF; font-size: 15px; font-weight: 800;">No monthly subscription</div>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 12px 16px;">
+                        <div style="color: #FFF; font-size: 15px; font-weight: 800;">No commission model</div>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 12px 16px;">
+                        <div style="color: #FFF; font-size: 15px; font-weight: 800;">Admin + customer portal</div>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 12px 16px;">
+                        <div style="color: #FFF; font-size: 15px; font-weight: 800;">Lifetime Updates</div>
+                    </div>
+                </div>
+
+                <div style="display: flex; gap: 12px; margin-top: 32px; flex-wrap: wrap;">
+    <a href="#pricing" style="background: #E8873A; color: #fff; border: none; border-radius: 10px; padding: 14px 32px; font-size: 14px; font-weight: 800; cursor: pointer; transition: opacity 0.2s; text-decoration: none; display: inline-block; text-align: center;" onmouseover="this.style.opacity='0.9'" onmouseout="this.style.opacity='1'">
+        Own Your Store
+    </a>
+    <a href="#features" style="background: transparent; color: #FFF; border: 1.5px solid rgba(255,255,255,0.15); border-radius: 10px; padding: 14px 32px; font-size: 14px; font-weight: 700; cursor: pointer; transition: background 0.2s; text-decoration: none; display: inline-block; text-align: center;" onmouseover="this.style.background='rgba(255,255,255,0.05)'" onmouseout="this.style.background='transparent'">
+        Explore Features
+    </a>
+</div>
+            </div>
+
+            <div class="hidden lg:block" style="flex: 0 0 820px; min-width: 820px;">
+                <div style="background: #141414; border-radius: 20px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 40px 100px rgba(0,0,0,0.5); overflow: hidden;">
+                    
+                    <div style="background: #1C1C1C; border-bottom: 1px solid rgba(255,255,255,0.06); display: flex; align-items: center; justify-content: space-between; padding: 10px 20px;">
+                        <div style="display: flex; align-items: center; gap: 15px;">
+                            <span style="color: #E8873A; font-weight: 800; font-size: 16px;">Storra</span>
+                            <div style="background: #252525; border-radius: 6px; padding: 5px 12px; font-size: 11px; color: #666;">⌕ Search dashboard...</div>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 10px;">
+                            <div style="background: #1A3A1A; border: 1px solid rgba(34,197,94,0.2); border-radius: 6px; padding: 4px 10px; display: flex; align-items: center; gap: 5px;">
+                                <span style="width: 5px; height: 5px; border-radius: 50%; background: #22C55E;"></span>
+                                <span style="color: #4ADE80; font-size: 9px; font-weight: 800;">LIVE</span>
+                            </div>
+                            <div style="width: 30px; height: 30px; border-radius: 50%; background: #E8873A; display: flex; align-items: center; justify-content: center; color: #FFF; font-size: 10px; font-weight: 800;">AD</div>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; height: 480px;">
+                        <div style="width: 140px; border-right: 1px solid rgba(255,255,255,0.05); padding: 15px 0;">
+                            <div style="display: flex; align-items: center; gap: 10px; padding: 10px 20px; cursor: pointer; background: transparent; border-left: 3px solid transparent; color: #666; font-size: 12px; font-weight: 400;"><span>⊞</span>Dashboard</div>
+                            <div style="display: flex; align-items: center; gap: 10px; padding: 10px 20px; cursor: pointer; background: rgba(232,135,58,0.1); border-left: 3px solid #E8873A; color: #E8873A; font-size: 12px; font-weight: 700;"><span>🛒</span>Orders</div>
+                            <div style="display: flex; align-items: center; gap: 10px; padding: 10px 20px; cursor: pointer; background: transparent; border-left: 3px solid transparent; color: #666; font-size: 12px; font-weight: 400;"><span>📦</span>Products</div>
+                            <div style="display: flex; align-items: center; gap: 10px; padding: 10px 20px; cursor: pointer; background: transparent; border-left: 3px solid transparent; color: #666; font-size: 12px; font-weight: 400;"><span>◈</span>Categories</div>
+                            <div style="display: flex; align-items: center; gap: 10px; padding: 10px 20px; cursor: pointer; background: transparent; border-left: 3px solid transparent; color: #666; font-size: 12px; font-weight: 400;"><span>👥</span>Customers</div>
+                            <div style="display: flex; align-items: center; gap: 10px; padding: 10px 20px; cursor: pointer; background: transparent; border-left: 3px solid transparent; color: #666; font-size: 12px; font-weight: 400;"><span>🏷</span>Coupons</div>
+                            <div style="display: flex; align-items: center; gap: 10px; padding: 10px 20px; cursor: pointer; background: transparent; border-left: 3px solid transparent; color: #666; font-size: 12px; font-weight: 400;"><span>👤</span>Staff</div>
+                            <div style="display: flex; align-items: center; gap: 10px; padding: 10px 20px; cursor: pointer; background: transparent; border-left: 3px solid transparent; color: #666; font-size: 12px; font-weight: 400;"><span>⚙</span>Settings</div>
+                        </div>
+
+                        <div style="flex: 1; padding: 20px; display: flex; flex-direction: column; gap: 20px;">
+                            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px;">
+                                <div style="background: #1A1A1A; border-radius: 10px; padding: 15px; border: 1px solid rgba(255,255,255,0.03);">
+                                    <div style="color: #666; font-size: 10px; margin-bottom: 5px;">Orders</div>
+                                    <div style="color: #FFF; font-size: 22px; font-weight: 900; margin-bottom: 8px;">128</div>
+                                    <svg viewBox="0 0 140 32" style="width: 100%; height: 32px;" preserveAspectRatio="none">
+                                        <defs>
+                                            <linearGradient id="skE8873A1" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="#E8873A" stop-opacity="0.25"></stop><stop offset="100%" stop-color="#E8873A" stop-opacity="0"></stop></linearGradient>
+                                        </defs>
+                                        <path d="M0,30 L20,22 L40,26 L60,14 L80,18 L100,8 L120,12 L140,4 L140,32 L0,32 Z" class="spark-gradient-up-orange"></path>
+                                        <path d="M0,30 L20,22 L40,26 L60,14 L80,18 L100,8 L120,12 L140,4" fill="none" stroke="#E8873A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    </svg>
+                                </div>
+                                <div style="background: #1A1A1A; border-radius: 10px; padding: 15px; border: 1px solid rgba(255,255,255,0.03);">
+                                    <div style="color: #666; font-size: 10px; margin-bottom: 5px;">Sales</div>
+                                    <div style="color: #FFF; font-size: 22px; font-weight: 900; margin-bottom: 8px;">₹84K</div>
+                                    <svg viewBox="0 0 140 32" style="width: 100%; height: 32px;" preserveAspectRatio="none">
+                                        <defs>
+                                            <linearGradient id="sk22C55E1" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="#22C55E" stop-opacity="0.25"></stop><stop offset="100%" stop-color="#22C55E" stop-opacity="0"></stop></linearGradient>
+                                        </defs>
+                                        <path d="M0,30 L20,22 L40,26 L60,14 L80,18 L100,8 L120,12 L140,4 L140,32 L0,32 Z" class="spark-gradient-up-green"></path>
+                                        <path d="M0,30 L20,22 L40,26 L60,14 L80,18 L100,8 L120,12 L140,4" fill="none" stroke="#22C55E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    </svg>
+                                </div>
+                                <div style="background: #1A1A1A; border-radius: 10px; padding: 15px; border: 1px solid rgba(255,255,255,0.03);">
+                                    <div style="color: #666; font-size: 10px; margin-bottom: 5px;">Shipping</div>
+                                    <div style="color: #FFF; font-size: 22px; font-weight: 900; margin-bottom: 8px;">42</div>
+                                    <svg viewBox="0 0 140 32" style="width: 100%; height: 32px;" preserveAspectRatio="none">
+                                        <defs>
+                                            <linearGradient id="sk2DD4BF0" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="#2DD4BF" stop-opacity="0.25"></stop><stop offset="100%" stop-color="#2DD4BF" stop-opacity="0"></stop></linearGradient>
+                                        </defs>
+                                        <path d="M0,8 L20,14 L40,10 L60,20 L80,16 L100,24 L120,20 L140,28 L140,32 L0,32 Z" class="spark-gradient-down-teal"></path>
+                                        <path d="M0,8 L20,14 L40,10 L60,20 L80,16 L100,24 L120,20 L140,28" fill="none" stroke="#2DD4BF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    </svg>
+                                </div>
+                                <div style="background: #1A1A1A; border-radius: 10px; padding: 15px; border: 1px solid rgba(255,255,255,0.03);">
+                                    <div style="color: #666; font-size: 10px; margin-bottom: 5px;">Growth</div>
+                                    <div style="color: #FFF; font-size: 22px; font-weight: 900; margin-bottom: 8px;">96%</div>
+                                    <svg viewBox="0 0 140 32" style="width: 100%; height: 32px;" preserveAspectRatio="none">
+                                        <defs>
+                                            <linearGradient id="sk9333EA1" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="#9333EA" stop-opacity="0.25"></stop><stop offset="100%" stop-color="#9333EA" stop-opacity="0"></stop></linearGradient>
+                                        </defs>
+                                        <path d="M0,30 L20,22 L40,26 L60,14 L80,18 L100,8 L120,12 L140,4 L140,32 L0,32 Z" class="spark-gradient-up-purple"></path>
+                                        <path d="M0,30 L20,22 L40,26 L60,14 L80,18 L100,8 L120,12 L140,4" fill="none" stroke="#9333EA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    </svg>
+                                </div>
+                            </div>
+
+                            <div style="display: flex; gap: 20px; flex: 1;">
+                                <div style="flex: 1; background: #1A1A1A; border-radius: 10px; border: 1px solid rgba(255,255,255,0.03); overflow: hidden;">
+                                    <div style="padding: 12px 15px; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 10px; color: #444; font-weight: 800;">RECENT ORDERS</div>
+                                    
+                                    <div style="display: grid; grid-template-columns: 80px 1fr 1fr 80px; padding: 10px 15px; border-bottom: 1px solid rgba(255,255,255,0.02); align-items: center;">
+                                        <span style="color: #E8873A; font-size: 10px; font-weight: 700;">#ST-2048</span>
+                                        <span style="color: #CCC; font-size: 10px;">Arjun Mehta</span>
+                                        <span style="font-size: 8px; font-weight: 700; padding: 2px 7px; border-radius: 4px; background: rgba(34,197,94,0.15); color: #4ADE80; border: 1px solid rgba(34,197,94,0.3); white-space: nowrap; width: fit-content;">Shipped</span>
+                                        <span style="font-size: 8px; font-weight: 700; padding: 2px 7px; border-radius: 4px; background: rgba(34,197,94,0.12); color: #4ADE80; border: 1px solid rgba(34,197,94,0.25); white-space: nowrap; width: fit-content;">Paid</span>
+                                    </div>
+                                    <div style="display: grid; grid-template-columns: 80px 1fr 1fr 80px; padding: 10px 15px; border-bottom: 1px solid rgba(255,255,255,0.02); align-items: center;">
+                                        <span style="color: #E8873A; font-size: 10px; font-weight: 700;">#ST-2049</span>
+                                        <span style="color: #CCC; font-size: 10px;">Priya Nair</span>
+                                        <span style="font-size: 8px; font-weight: 700; padding: 2px 7px; border-radius: 4px; background: rgba(234,179,8,0.15); color: #FACC15; border: 1px solid rgba(234,179,8,0.3); white-space: nowrap; width: fit-content;">Processing</span>
+                                        <span style="font-size: 8px; font-weight: 700; padding: 2px 7px; border-radius: 4px; background: rgba(34,197,94,0.12); color: #4ADE80; border: 1px solid rgba(34,197,94,0.25); white-space: nowrap; width: fit-content;">Paid</span>
+                                    </div>
+                                    <div style="display: grid; grid-template-columns: 80px 1fr 1fr 80px; padding: 10px 15px; border-bottom: 1px solid rgba(255,255,255,0.02); align-items: center;">
+                                        <span style="color: #E8873A; font-size: 10px; font-weight: 700;">#ST-2050</span>
+                                        <span style="color: #CCC; font-size: 10px;">Rohit Kumar</span>
+                                        <span style="font-size: 8px; font-weight: 700; padding: 2px 7px; border-radius: 4px; background: rgba(249,115,22,0.15); color: #FB923C; border: 1px solid rgba(249,115,22,0.3); white-space: nowrap; width: fit-content;">Pending</span>
+                                        <span style="font-size: 8px; font-weight: 700; padding: 2px 7px; border-radius: 4px; background: rgba(234,179,8,0.12); color: #FACC15; border: 1px solid rgba(234,179,8,0.25); white-space: nowrap; width: fit-content;">Review</span>
+                                    </div>
+                                    <div style="display: grid; grid-template-columns: 80px 1fr 1fr 80px; padding: 10px 15px; border-bottom: 1px solid rgba(255,255,255,0.02); align-items: center;">
+                                        <span style="color: #E8873A; font-size: 10px; font-weight: 700;">#ST-2051</span>
+                                        <span style="color: #CCC; font-size: 10px;">Sneha Das</span>
+                                        <span style="font-size: 8px; font-weight: 700; padding: 2px 7px; border-radius: 4px; background: rgba(99,102,241,0.15); color: #A5B4FC; border: 1px solid rgba(99,102,241,0.3); white-space: nowrap; width: fit-content;">Delivered</span>
+                                        <span style="font-size: 8px; font-weight: 700; padding: 2px 7px; border-radius: 4px; background: rgba(34,197,94,0.12); color: #4ADE80; border: 1px solid rgba(34,197,94,0.25); white-space: nowrap; width: fit-content;">Paid</span>
+                                    </div>
+                                    <div style="display: grid; grid-template-columns: 80px 1fr 1fr 80px; padding: 10px 15px; border-bottom: 1px solid rgba(255,255,255,0.02); align-items: center;">
+                                        <span style="color: #E8873A; font-size: 10px; font-weight: 700;">#ST-2052</span>
+                                        <span style="color: #CCC; font-size: 10px;">Vikram Sharma</span>
+                                        <span style="font-size: 8px; font-weight: 700; padding: 2px 7px; border-radius: 4px; background: rgba(34,197,94,0.15); color: #4ADE80; border: 1px solid rgba(34,197,94,0.3); white-space: nowrap; width: fit-content;">Shipped</span>
+                                        <span style="font-size: 8px; font-weight: 700; padding: 2px 7px; border-radius: 4px; background: rgba(34,197,94,0.12); color: #4ADE80; border: 1px solid rgba(34,197,94,0.25); white-space: nowrap; width: fit-content;">Paid</span>
+                                    </div>
+                                    <div style="display: grid; grid-template-columns: 80px 1fr 1fr 80px; padding: 10px 15px; border-bottom: 1px solid rgba(255,255,255,0.02); align-items: center;">
+                                        <span style="color: #E8873A; font-size: 10px; font-weight: 700;">#ST-2053</span>
+                                        <span style="color: #CCC; font-size: 10px;">Ananya Bose</span>
+                                        <span style="font-size: 8px; font-weight: 700; padding: 2px 7px; border-radius: 4px; background: rgba(239,68,68,0.15); color: #F87171; border: 1px solid rgba(239,68,68,0.3); white-space: nowrap; width: fit-content;">Cancelled</span>
+                                        <span style="font-size: 8px; font-weight: 700; padding: 2px 7px; border-radius: 4px; background: rgba(234,179,8,0.12); color: #FACC15; border: 1px solid rgba(234,179,8,0.25); white-space: nowrap; width: fit-content;">Review</span>
+                                    </div>
+                                </div>
+
+                                <div style="width: 180px; display: flex; flex-direction: column; gap: 15px;">
+                                    <div style="background: #1A1A1A; border-radius: 10px; padding: 15px; border: 1px solid rgba(255,255,255,0.03);">
+                                        <div style="color: #BBB; font-size: 10px; font-weight: 800; margin-bottom: 10px;">REVENUE</div>
+                                        <div style="display: flex; align-items: flex-end; gap: 5px; height: 60px; padding-top: 4px;">
+                                            <div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 3px; height: 100%; justify-content: flex-end;">
+                                                <div style="width: 100%; height: 65.2%; background: rgba(232,135,58,0.25); border-radius: 3px 3px 0 0;"></div>
+                                                <span style="color: #666; font-size: 7px; white-space: nowrap;">Jan</span>
+                                            </div>
+                                            <div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 3px; height: 100%; justify-content: flex-end;">
+                                                <div style="width: 100%; height: 47.3%; background: rgba(232,135,58,0.25); border-radius: 3px 3px 0 0;"></div>
+                                                <span style="color: #666; font-size: 7px; white-space: nowrap;">Feb</span>
+                                            </div>
+                                            <div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 3px; height: 100%; justify-content: flex-end;">
+                                                <div style="width: 100%; height: 82.1%; background: rgba(232,135,58,0.25); border-radius: 3px 3px 0 0;"></div>
+                                                <span style="color: #666; font-size: 7px; white-space: nowrap;">Mar</span>
+                                            </div>
+                                            <div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 3px; height: 100%; justify-content: flex-end;">
+                                                <div style="width: 100%; height: 57.8%; background: rgba(232,135,58,0.25); border-radius: 3px 3px 0 0;"></div>
+                                                <span style="color: #666; font-size: 7px; white-space: nowrap;">Apr</span>
+                                            </div>
+                                            <div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 3px; height: 100%; justify-content: flex-end;">
+                                                <div style="width: 100%; height: 92.6%; background: rgba(232,135,58,0.25); border-radius: 3px 3px 0 0;"></div>
+                                                <span style="color: #666; font-size: 7px; white-space: nowrap;">May</span>
+                                            </div>
+                                            <div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 3px; height: 100%; justify-content: flex-end;">
+                                                <div style="width: 100%; height: 75.7%; background: rgba(232,135,58,0.25); border-radius: 3px 3px 0 0;"></div>
+                                                <span style="color: #666; font-size: 7px; white-space: nowrap;">Jun</span>
+                                            </div>
+                                            <div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 3px; height: 100%; justify-content: flex-end;">
+                                                <div style="width: 100%; height: 100%; background: #E8873A; border-radius: 3px 3px 0 0;"></div>
+                                                <span style="color: #666; font-size: 7px; white-space: nowrap;">Jul</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div style="background: #1A1A1A; border-radius: 10px; padding: 15px; border: 1px solid rgba(255,255,255,0.03);">
+                                        <div style="color: #BBB; font-size: 10px; font-weight: 800; margin-bottom: 10px;">TOP PRODUCT</div>
+                                        <div style="margin-bottom: 8px;">
+                                            <div style="color: #888; font-size: 9px; margin-bottom: 3px;">Nike Air Max 90</div>
+                                            <div style="height: 4px; background: #252525; border-radius: 2px;"><div style="width: 88%; height: 100%; background: #E8873A; border-radius: 2px;"></div></div>
+                                        </div>
+                                        <div style="margin-bottom: 8px;">
+                                            <div style="color: #888; font-size: 9px; margin-bottom: 3px;">Sony WH-1000XM5</div>
+                                            <div style="height: 4px; background: #252525; border-radius: 2px;"><div style="width: 72%; height: 100%; background: #2DD4BF; border-radius: 2px;"></div></div>
+                                        </div>
+                                        <div style="margin-bottom: 8px;">
+                                            <div style="color: #888; font-size: 9px; margin-bottom: 3px;">Apple Watch SE</div>
+                                            <div style="height: 4px; background: #252525; border-radius: 2px;"><div style="width: 55%; height: 100%; background: #9333EA; border-radius: 2px;"></div></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div style="height: 25px; margin: 0 80px; background: rgba(0,0,0,0.4); filter: blur(20px); border-radius: 50%;"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="problem" aria-labelledby="problem-title" class="py-24 overflow-hidden relative" style="background: #f8f8f6;">
+        <div class="absolute top-[-100px] left-[-100px] w-[400px] h-[400px] bg-[radial-gradient(circle,rgba(232,135,58,0.05)_0%,transparent_70%)] pointer-events-none"></div>
+        <div class="absolute bottom-[-60px] right-[10%] w-[320px] h-[320px] bg-[radial-gradient(circle,rgba(232,135,58,0.03)_0%,transparent_70%)] pointer-events-none"></div>
+
+        <div class="container mx-auto px-6 max-w-[1200px] relative z-10">
+            <article class="flex flex-col items-center text-center">
+                
+                <div class="inline-flex items-center gap-2 bg-[rgba(232,135,58,0.09)] border border-[rgba(232,135,58,0.22)] rounded-full px-3 py-1 mb-6">
+                    <span class="w-1.5 h-1.5 rounded-full bg-[#E8873A] inline-block shrink-0 animate-pulse"></span>
+                    <span class="text-[10px] text-[#E8873A] font-bold tracking-[0.09em] uppercase">The Shift</span>
+                </div>
+                
+                <h2 id="problem-title" class="text-3xl font-black tracking-tight text-[#111] sm:text-4xl md:text-5xl max-w-3xl leading-[1.1] text-center" style="letter-spacing: -0.03em;">
+                    Ecommerce should not become a <span class="bg-gradient-to-r from-[#E8873A] to-[#F0A05A] bg-clip-text text-transparent">monthly burden.</span>
+                </h2>
+                
+                <p class="mt-5 max-w-[760px] text-sm md:text-base leading-relaxed text-[#666] font-medium text-center">
+                    Many store builders begin simple, but become costly when the business grows. 
+                    Storra is designed for founders who prefer ownership, flexibility and a platform 
+                    that can be adapted to their exact business needs.
+                </p>
+                
+                <div class="mt-14 grid w-full gap-8 sm:grid-cols-2 text-left">
+                    <div class="group rounded-2xl border border-[#eee] bg-white p-7 shadow-[0_1px_4px_rgba(0,0,0,0.04)] transition-all duration-300 hover:shadow-md">
+                        <div class="flex items-center gap-2.5 mb-6">
+                            <div class="w-6 h-6 rounded-md bg-red-50 flex items-center justify-center border border-red-100 text-xs text-red-500 font-bold">✕</div>
+                            <h3 class="text-base font-extrabold text-[#111] tracking-tight">Traditional platform model</h3>
+                        </div>
+                        <ul class="space-y-3.5 text-[13px] text-[#555] font-medium">
+                            <li class="flex items-start gap-3">
+                                <span class="text-red-400 font-bold select-none mt-0.5">•</span>
+                                <span class="line-through text-zinc-400 decoration-zinc-300/80">Monthly subscriptions</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="text-red-400 font-bold select-none mt-0.5">•</span>
+                                <span class="line-through text-zinc-400 decoration-zinc-300/80">Commission or transaction dependency</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="text-red-400 font-bold select-none mt-0.5">•</span>
+                                <span class="line-through text-zinc-400 decoration-zinc-300/80">Limited customization control</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="text-red-400 font-bold select-none mt-0.5">•</span>
+                                <span class="line-through text-zinc-400 decoration-zinc-300/80">Add-on based scaling cost</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="text-red-400 font-bold select-none mt-0.5">•</span>
+                                <span class="line-through text-zinc-400 decoration-zinc-300/80">Business locked inside platform rules</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="group rounded-2xl bg-white p-7 shadow-[0_12px_30px_rgba(232,135,58,0.04),0_1px_4px_rgba(0,0,0,0.02)] relative overflow-hidden transition-all duration-300 hover:shadow-lg border border-transparent hover:border-[#E8873A]/20">
+                        <div class="absolute top-0 inset-x-0 h-[3px]"></div>
+                        <div class="flex items-center gap-2.5 mb-6">
+                            <div class="w-6 h-6 rounded-md bg-[rgba(232,135,58,0.1)] flex items-center justify-center border border-[rgba(232,135,58,0.2)] text-xs text-[#E8873A] font-bold">✓</div>
+                            <h3 class="text-base font-extrabold text-[#111] tracking-tight">Storra ownership model</h3>
+                        </div>
+                        <ul class="space-y-3.5 text-[13px] text-[#444] font-bold">
+                            <li class="flex items-start gap-3 transition-transform duration-200 group-hover:translate-x-0.5">
+                                <span class="text-[#E8873A] font-bold select-none">✓</span>
+                                <span>One-time payment approach</span>
+                            </li>
+                            <li class="flex items-start gap-3 transition-transform duration-200 group-hover:translate-x-0.5">
+                                <span class="text-[#E8873A] font-bold select-none">✓</span>
+                                <span>No commission-first model</span>
+                            </li>
+                            <li class="flex items-start gap-3 transition-transform duration-200 group-hover:translate-x-0.5">
+                                <span class="text-[#E8873A] font-bold select-none">✓</span>
+                                <span>Flexible customizations</span>
+                            </li>
+                            <li class="flex items-start gap-3 transition-transform duration-200 group-hover:translate-x-0.5">
+                                <span class="text-[#E8873A] font-bold select-none">✓</span>
+                                <span>Admin and customer modules included</span>
+                            </li>
+                            <li class="flex items-start gap-3 transition-transform duration-200 group-hover:translate-x-0.5">
+                                <span class="text-[#E8873A] font-bold select-none">✓</span>
+                                <span>Built for business control</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <section id="features" aria-labelledby="features-title" class="py-24 px-6 relative" style="background: #f8f8f6;">
+        <div class="container mx-auto max-w-[1200px]">
+            <header class="text-center mb-20 flex flex-col items-center">
+                <div class="inline-flex items-center gap-2 bg-[rgba(232,135,58,0.09)] border border-[rgba(232,135,58,0.22)] rounded-full px-3 py-1 mb-6">
+                    <span class="w-1.5 h-1.5 rounded-full bg-[#E8873A] inline-block shrink-0"></span>
+                    <span class="text-[10px] text-[#E8873A] font-bold tracking-[0.2em] uppercase">Complete Commerce System</span>
+                </div>
+                
+                <h2 id="features-title" class="text-3xl md:text-5xl font-bold text-[#111] mb-6 tracking-tight leading-tight max-w-3xl">
+                    Everything needed to run, track and grow a store.
+                </h2>
+                
+                <p class="max-w-2xl text-[15px] md:text-[16px] leading-relaxed text-zinc-500 font-medium">
+                    Storra has two connected sides: a smooth customer experience for shopping and ordering, 
+                    and a strong admin experience for managing products, orders, payments, staff and store operations.
+                </p>
+            </header>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <article class="group bg-white border border-zinc-200/60 rounded-[24px] p-8 shadow-sm transition-all duration-300 hover:shadow-md hover:border-[#E8873A]/30 flex flex-col items-start">
+                    <div class="w-10 h-10 rounded-xl bg-zinc-50 border border-zinc-100 flex items-center justify-center text-[13px] font-black text-[#E8873A] mb-6 group-hover:bg-[#E8873A] group-hover:text-white transition-colors duration-300">01</div>
+                    <h3 class="text-lg font-bold text-[#111] mb-3 tracking-tight">Product & Category Management</h3>
+                    <p class="text-[14px] leading-relaxed text-zinc-500 font-medium">Create product categories, add product details, upload images, update pricing and organize your store structure clearly.</p>
+                </article>
+                <article class="group bg-white border border-zinc-200/60 rounded-[24px] p-8 shadow-sm transition-all duration-300 hover:shadow-md hover:border-[#E8873A]/30 flex flex-col items-start">
+                    <div class="w-10 h-10 rounded-xl bg-zinc-50 border border-zinc-100 flex items-center justify-center text-[13px] font-black text-[#E8873A] mb-6 group-hover:bg-[#E8873A] group-hover:text-white transition-colors duration-300">02</div>
+                    <h3 class="text-lg font-bold text-[#111] mb-3 tracking-tight">Customer Ordering Portal</h3>
+                    <p class="text-[14px] leading-relaxed text-zinc-500 font-medium">Customers can browse products, place orders, make payments, track purchase status and view order history.</p>
+                </article>
+                <article class="group bg-white border border-zinc-200/60 rounded-[24px] p-8 shadow-sm transition-all duration-300 hover:shadow-md hover:border-[#E8873A]/30 flex flex-col items-start">
+                    <div class="w-10 h-10 rounded-xl bg-zinc-50 border border-zinc-100 flex items-center justify-center text-[13px] font-black text-[#E8873A] mb-6 group-hover:bg-[#E8873A] group-hover:text-white transition-colors duration-300">03</div>
+                    <h3 class="text-lg font-bold text-[#111] mb-3 tracking-tight">Order Status Tracking</h3>
+                    <p class="text-[14px] leading-relaxed text-zinc-500 font-medium">Manage status such as processing, shipped, delivered, cancelled, failed payments or pending confirmation.</p>
+                </article>
+                <article class="group bg-white border border-zinc-200/60 rounded-[24px] p-8 shadow-sm transition-all duration-300 hover:shadow-md hover:border-[#E8873A]/30 flex flex-col items-start">
+                    <div class="w-10 h-10 rounded-xl bg-zinc-50 border border-zinc-100 flex items-center justify-center text-[13px] font-black text-[#E8873A] mb-6 group-hover:bg-[#E8873A] group-hover:text-white transition-colors duration-300">04</div>
+                    <h3 class="text-lg font-bold text-[#111] mb-3 tracking-tight">Payment & Transaction History</h3>
+                    <p class="text-[14px] leading-relaxed text-zinc-500 font-medium">Keep records of successful, failed and pending transactions with clear payment visibility for the business.</p>
+                </article>
+                <article class="group bg-white border border-zinc-200/60 rounded-[24px] p-8 shadow-sm transition-all duration-300 hover:shadow-md hover:border-[#E8873A]/30 flex flex-col items-start">
+                    <div class="w-10 h-10 rounded-xl bg-zinc-50 border border-zinc-100 flex items-center justify-center text-[13px] font-black text-[#E8873A] mb-6 group-hover:bg-[#E8873A] group-hover:text-white transition-colors duration-300">05</div>
+                    <h3 class="text-lg font-bold text-[#111] mb-3 tracking-tight">Coupons & Promotions</h3>
+                    <p class="text-[14px] leading-relaxed text-zinc-500 font-medium">Create coupon logic, promotional offers and controlled discounts to support campaigns and customer conversion.</p>
+                </article>
+                <article class="group bg-white border border-zinc-200/60 rounded-[24px] p-8 shadow-sm transition-all duration-300 hover:shadow-md hover:border-[#E8873A]/30 flex flex-col items-start">
+                    <div class="w-10 h-10 rounded-xl bg-zinc-50 border border-zinc-100 flex items-center justify-center text-[13px] font-black text-[#E8873A] mb-6 group-hover:bg-[#E8873A] group-hover:text-white transition-colors duration-300">06</div>
+                    <h3 class="text-lg font-bold text-[#111] mb-3 tracking-tight">Staff Management</h3>
+                    <p class="text-[14px] leading-relaxed text-zinc-500 font-medium">Give team members access to operational tools and manage responsibilities inside the store workflow.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section id="modules" aria-labelledby="modules-title" class="py-24 px-6 relative overflow-hidden" style="background: #111111;">
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#E8873A]/5 rounded-full blur-[120px] pointer-events-none"></div>
+
+        <div class="container mx-auto max-w-[1100px] relative z-10">
+            <header class="flex flex-col items-center text-center mb-16 md:mb-20">
+                <div class="inline-flex items-center gap-2 bg-white/5 border border-white/10 rounded-full px-3 py-1 mb-6">
+                    <span class="w-1.5 h-1.5 rounded-full bg-[#E8873A] inline-block"></span>
+                    <span class="text-[10px] text-zinc-400 font-bold tracking-[0.2em] uppercase">Admin + Customer Ecosystem</span>
+                </div>
+                
+                <h2 id="modules-title" class="text-3xl md:text-5xl font-bold text-white mb-6 tracking-tight leading-tight max-w-3xl">
+                    Two powerful sides. <br />
+                    <span class="text-[#E8873A]">One clear commerce layer.</span>
+                </h2>
+                
+                <p class="max-w-2xl text-[15px] md:text-[16px] leading-relaxed text-zinc-400 font-medium">
+                    The customer side helps people buy confidently. The admin side helps business owners operate confidently.
+                </p>
+            </header>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <article class="group relative bg-[#1A1A1A] border border-white/5 rounded-[32px] p-8 md:p-10 transition-all duration-300 hover:border-zinc-700">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-12 h-12 rounded-2xl bg-zinc-800 flex items-center justify-center text-xl font-black text-white border border-white/10 group-hover:scale-110 transition-transform">C</div>
+                        <h3 class="text-xl font-bold text-white tracking-tight">Customer Side</h3>
+                    </div>
+                    <p class="text-[15px] leading-relaxed text-zinc-400 font-medium mb-8">
+                        Product browsing, cart, checkout, payments, purchase history, transaction status, order status and delivery updates.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="text-[10px] font-bold text-zinc-500 bg-zinc-900 border border-white/5 px-2 py-1 rounded-md uppercase tracking-wider">Seamless Checkout</span>
+                        <span class="text-[10px] font-bold text-zinc-500 bg-zinc-900 border border-white/5 px-2 py-1 rounded-md uppercase tracking-wider">Real-time Tracking</span>
+                        <span class="text-[10px] font-bold text-zinc-500 bg-zinc-900 border border-white/5 px-2 py-1 rounded-md uppercase tracking-wider">Purchase History</span>
+                    </div>
+                </article>
+
+                <article class="group relative bg-[#1A1A1A] border border-[#E8873A]/20 rounded-[32px] p-8 md:p-10 transition-all duration-300 hover:border-[#E8873A]/40 shadow-[0_20px_40px_rgba(0,0,0,0.3)]">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-[#E8873A]/10 blur-[50px] rounded-full pointer-events-none"></div>
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-12 h-12 rounded-2xl bg-[#E8873A]/10 flex items-center justify-center text-xl font-black text-[#E8873A] border border-[#E8873A]/20 group-hover:scale-110 transition-transform">A</div>
+                        <h3 class="text-xl font-bold text-white tracking-tight">Admin Side</h3>
+                    </div>
+                    <p class="text-[15px] leading-relaxed text-zinc-400 font-medium mb-8">
+                        Dashboard, products, categories, images, orders, payments, coupons, customers, staff, transactions and operational control.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="text-[10px] font-bold text-[#E8873A]/80 bg-[#E8873A]/5 border border-[#E8873A]/10 px-2 py-1 rounded-md uppercase tracking-wider">Inventory Control</span>
+                        <span class="text-[10px] font-bold text-[#E8873A]/80 bg-[#E8873A]/5 border border-[#E8873A]/10 px-2 py-1 rounded-md uppercase tracking-wider">Revenue Analytics</span>
+                        <span class="text-[10px] font-bold text-[#E8873A]/80 bg-[#E8873A]/5 border border-[#E8873A]/10 px-2 py-1 rounded-md uppercase tracking-wider">Staff Roles</span>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section id="pricing" aria-labelledby="pricing-title" class="py-24 px-6 relative overflow-hidden" style="background: #f8f8f6;">
+        <div class="absolute top-1/2 left-0 -translate-y-1/2 w-full h-px bg-gradient-to-r from-transparent via-[#111]/5 to-transparent pointer-events-none"></div>
+
+        <div class="container mx-auto max-w-[1100px] relative z-10">
+            <article class="grid lg:grid-cols-[1fr_400px] gap-12 items-center bg-white border border-[#eee] rounded-[40px] p-8 md:p-16 shadow-[0_12px_40px_rgba(0,0,0,0.03)] relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-64 h-64 bg-[#E8873A]/5 blur-[80px] rounded-full pointer-events-none"></div>
+
+                <div class="flex flex-col items-start text-left">
+                    <div class="inline-flex items-center gap-2 bg-[#E8873A]/10 border border-[#E8873A]/20 rounded-full px-3 py-1 mb-6">
+                        <span class="w-1.5 h-1.5 rounded-full bg-[#E8873A] inline-block animate-pulse"></span>
+                        <span class="text-[10px] text-[#E8873A] font-bold tracking-[0.2em] uppercase">Pricing Philosophy</span>
+                    </div>
+
+                    <h2 id="pricing-title" class="text-3xl md:text-5xl font-black text-[#111] mb-6 tracking-tight leading-[1.1]">
+                        One-time payment.<br />
+                        Lifetime <span class="bg-gradient-to-r from-[#E8873A] to-[#F0A05A] bg-clip-text text-transparent">ownership.</span>
+                    </h2>
+
+                    <p class="max-w-md text-[15px] md:text-[16px] leading-relaxed text-[#666] font-medium mb-10">
+                        Storra is positioned for businesses that want to own their ecommerce system 
+                        instead of depending on recurring monthly platform costs.
+                    </p>
+
+                    <a href="#contact" class="px-8 py-4 bg-transparent border border-[#111]/20 text-[#111] rounded-xl font-bold text-sm hover:bg-[#111] hover:text-white transition-all duration-300 active:scale-95">
+                        Request Storra Access
+                    </a>
+                </div>
+
+                <aside class="relative group">
+                    <div class="absolute -inset-0.5 bg-gradient-to-r from-[#E8873A] to-[#F0A05A] rounded-[32px] opacity-10 group-hover:opacity-30 transition duration-500 blur-sm"></div>
+                    <div class="relative bg-[#fafafa] border border-[#eee] rounded-[32px] p-8 md:p-10 flex flex-col h-full shadow-[0_4px_20px_rgba(0,0,0,0.01)]">
+                        <div class="flex justify-between items-start mb-6">
+                            <strong class="text-2xl font-black text-[#111] tracking-tight">Lifetime</strong>
+                            <span class="px-3 py-1 bg-[#E8873A] text-white text-[10px] font-black rounded-md uppercase tracking-widest">Popular</span>
+                        </div>
+                        <p class="text-[13px] leading-relaxed text-zinc-500 font-medium mb-8">
+                            No monthly subscription. No commission. No pay-per-use pricing.
+                        </p>
+                        <div class="h-px w-full bg-[#111]/5 mb-8"></div>
+                        <ul class="space-y-4">
+                            <li class="flex items-center gap-3 text-sm text-[#444] font-bold group-hover:translate-x-1 transition-transform duration-300">
+                                <div class="flex-shrink-0 w-5 h-5 rounded-full bg-[#E8873A]/10 flex items-center justify-center border border-[#E8873A]/20">
+                                    <span class="text-[#E8873A] text-[10px]">✓</span>
+                                </div>Full store control
+                            </li>
+                            <li class="flex items-center gap-3 text-sm text-[#444] font-bold group-hover:translate-x-1 transition-transform duration-300">
+                                <div class="flex-shrink-0 w-5 h-5 rounded-full bg-[#E8873A]/10 flex items-center justify-center border border-[#E8873A]/20">
+                                    <span class="text-[#E8873A] text-[10px]">✓</span>
+                                </div>Admin dashboard
+                            </li>
+                            <li class="flex items-center gap-3 text-sm text-[#444] font-bold group-hover:translate-x-1 transition-transform duration-300">
+                                <div class="flex-shrink-0 w-5 h-5 rounded-full bg-[#E8873A]/10 flex items-center justify-center border border-[#E8873A]/20">
+                                    <span class="text-[#E8873A] text-[10px]">✓</span>
+                                </div>Customer ordering
+                            </li>
+                            <li class="flex items-center gap-3 text-sm text-[#444] font-bold group-hover:translate-x-1 transition-transform duration-300">
+                                <div class="flex-shrink-0 w-5 h-5 rounded-full bg-[#E8873A]/10 flex items-center justify-center border border-[#E8873A]/20">
+                                    <span class="text-[#E8873A] text-[10px]">✓</span>
+                                </div>Flexible customization
+                            </li>
+                            <li class="flex items-center gap-3 text-sm text-[#444] font-bold group-hover:translate-x-1 transition-transform duration-300">
+                                <div class="flex-shrink-0 w-5 h-5 rounded-full bg-[#E8873A]/10 flex items-center justify-center border border-[#E8873A]/20">
+                                    <span class="text-[#E8873A] text-[10px]">✓</span>
+                                </div>Built by Blueprint Software
+                            </li>
+                        </ul>
+                    </div>
+                </aside>
+            </article>
+        </div>
+    </section>
+
+    <section id="workflow" aria-labelledby="workflow-title" class="py-24 px-6 relative overflow-hidden" style="background: #f8f8f6;">
+        <div class="absolute top-1/4 right-[-100px] w-[400px] h-[400px] bg-[radial-gradient(circle,rgba(232,135,58,0.04)_0%,transparent_70%)] pointer-events-none"></div>
+        <div class="absolute bottom-1/4 left-[-100px] w-[400px] h-[400px] bg-[radial-gradient(circle,rgba(232,135,58,0.03)_0%,transparent_70%)] pointer-events-none"></div>
+
+        <div class="container mx-auto max-w-[1100px] relative z-10">
+            <header class="flex flex-col items-center text-center mb-20">
+                <div class="inline-flex items-center gap-2 bg-[rgba(232,135,58,0.09)] border border-[rgba(232,135,58,0.22)] rounded-full px-3 py-1 mb-6">
+                    <span class="w-1.5 h-1.5 rounded-full bg-[#E8873A] inline-block shrink-0 animate-pulse"></span>
+                    <span class="text-[10px] text-[#E8873A] font-bold tracking-[0.09em] uppercase">Workflow</span>
+                </div>
+                <h2 id="workflow-title" class="text-3xl font-black text-[#111] sm:text-4xl md:text-5xl max-w-3xl leading-[1.1] tracking-tight text-center">
+                    From product listing to <span class="bg-gradient-to-r from-[#E8873A] to-[#F0A05A] bg-clip-text text-transparent">delivery status.</span>
+                </h2>
+                <p class="mt-5 max-w-[760px] text-sm md:text-base leading-relaxed text-[#666] font-medium text-center">
+                    Storra keeps the full ecommerce lifecycle organized, visible and manageable.
+                </p>
+            </header>
+
+            <div class="relative grid gap-8 md:grid-cols-4 md:gap-6">
+                <div class="absolute top-[35px] left-4 right-4 h-px bg-gradient-to-r from-[#E8873A]/30 via-zinc-200 to-transparent hidden md:block pointer-events-none"></div>
+                
+                <article class="group relative flex flex-col items-start bg-white rounded-2xl border border-[#eee] p-6 shadow-[0_1px_4px_rgba(0,0,0,0.04)] transition-all duration-300 hover:shadow-lg hover:border-[#E8873A]/20">
+                    <div class="flex items-center justify-center w-12 h-12 rounded-xl bg-[#fafafa] border border-[#eee] text-sm font-black text-[#111] mb-6 transition-all duration-300 group-hover:bg-[#E8873A] group-hover:text-white group-hover:border-[#E8873A] shadow-sm">1</div>
+                    <div class="flex flex-col text-left">
+                        <h3 class="text-base font-black text-[#111] tracking-tight mb-3 group-hover:text-[#E8873A] transition-colors duration-200">Create your store structure</h3>
+                        <p class="text-[13px] leading-relaxed text-[#666] font-medium">Add categories, products, images, prices, descriptions and availability.</p>
+                    </div>
+                </article>
+                <article class="group relative flex flex-col items-start bg-white rounded-2xl border border-[#eee] p-6 shadow-[0_1px_4px_rgba(0,0,0,0.04)] transition-all duration-300 hover:shadow-lg hover:border-[#E8873A]/20">
+                    <div class="flex items-center justify-center w-12 h-12 rounded-xl bg-[#fafafa] border border-[#eee] text-sm font-black text-[#111] mb-6 transition-all duration-300 group-hover:bg-[#E8873A] group-hover:text-white group-hover:border-[#E8873A] shadow-sm">2</div>
+                    <div class="flex flex-col text-left">
+                        <h3 class="text-base font-black text-[#111] tracking-tight mb-3 group-hover:text-[#E8873A] transition-colors duration-200">Customers place orders</h3>
+                        <p class="text-[13px] leading-relaxed text-[#666] font-medium">Customers browse, purchase, pay and receive clear status visibility.</p>
+                    </div>
+                </article>
+                <article class="group relative flex flex-col items-start bg-white rounded-2xl border border-[#eee] p-6 shadow-[0_1px_4px_rgba(0,0,0,0.04)] transition-all duration-300 hover:shadow-lg hover:border-[#E8873A]/20">
+                    <div class="flex items-center justify-center w-12 h-12 rounded-xl bg-[#fafafa] border border-[#eee] text-sm font-black text-[#111] mb-6 transition-all duration-300 group-hover:bg-[#E8873A] group-hover:text-white group-hover:border-[#E8873A] shadow-sm">3</div>
+                    <div class="flex flex-col text-left">
+                        <h3 class="text-base font-black text-[#111] tracking-tight mb-3 group-hover:text-[#E8873A] transition-colors duration-200">Admin manages fulfillment</h3>
+                        <p class="text-[13px] leading-relaxed text-[#666] font-medium">Store owners update payment, processing, shipping and delivery status.</p>
+                    </div>
+                </article>
+                <article class="group relative flex flex-col items-start bg-white rounded-2xl border border-[#eee] p-6 shadow-[0_1px_4px_rgba(0,0,0,0.04)] transition-all duration-300 hover:shadow-lg hover:border-[#E8873A]/20">
+                    <div class="flex items-center justify-center w-12 h-12 rounded-xl bg-[#fafafa] border border-[#eee] text-sm font-black text-[#111] mb-6 transition-all duration-300 group-hover:bg-[#E8873A] group-hover:text-white group-hover:border-[#E8873A] shadow-sm">4</div>
+                    <div class="flex flex-col text-left">
+                        <h3 class="text-base font-black text-[#111] tracking-tight mb-3 group-hover:text-[#E8873A] transition-colors duration-200">Business grows with control</h3>
+                        <p class="text-[13px] leading-relaxed text-[#666] font-medium">Use records, coupons, staff and transaction data to manage the store confidently.</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" aria-labelledby="contact-title" class="py-24 px-6 relative overflow-hidden" style="background: #f8f8f6;">
+        <div class="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px] pointer-events-none"></div>
+        <div class="absolute bottom-[-100px] right-[-100px] w-[500px] h-[500px] bg-[radial-gradient(circle,rgba(232,135,58,0.04)_0%,transparent_70%)] pointer-events-none"></div>
+
+        <div class="container mx-auto max-w-[1100px] relative z-10">
+            <article class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-10 bg-white border border-[#eee] rounded-[40px] p-8 md:p-16 shadow-[0_12px_40px_rgba(0,0,0,0.03)] transition-all duration-300 hover:border-[#E8873A]/10">
+                <div class="flex flex-col items-start text-left max-w-3xl">
+                    <div class="inline-flex items-center gap-2 bg-[rgba(232,135,58,0.09)] border border-[rgba(232,135,58,0.22)] rounded-full px-3 py-1 mb-6">
+                        <span class="w-1.5 h-1.5 rounded-full bg-[#E8873A] inline-block shrink-0 animate-pulse"></span>
+                        <span class="text-[10px] text-[#E8873A] font-bold tracking-[0.09em] uppercase">Built by Blueprint Software</span>
+                    </div>
+
+                    <h2 id="contact-title" class="text-3xl font-black text-[#111] sm:text-4xl md:text-5xl leading-[1.1] tracking-tight">
+                        Launch your ecommerce system with <span class="bg-gradient-to-r from-[#E8873A] to-[#F0A05A] bg-clip-text text-transparent">Storra.</span>
+                    </h2>
+
+                    <p class="mt-5 text-sm md:text-base leading-relaxed text-[#666] font-medium max-w-2xl">
+                        Storra is developed by Blueprint Software, For implementation, customization or business inquiries, contact Blueprint Software.
+                    </p>
+
+                    <div class="mt-6 flex items-center gap-2.5 text-sm md:text-base text-[#111] font-bold group">
+                        <span class="text-[#E8873A] font-semibold">Phone:</span>
+                        <a href="tel:+9197788226340" class="hover:text-[#E8873A] decoration-zinc-200 group-hover:decoration-[#E8873A] transition-all duration-200">
+                            +91 97788 226340
+                        </a>
+                    </div>
+                </div>
+
+                <div class="flex-shrink-0">
+                    <a href="https://blueprintsoftware.in" class="inline-flex items-center justify-center px-8 py-4 bg-[#111] border border-transparent text-white rounded-xl font-bold text-sm shadow-md hover:bg-[#E8873A] transition-all duration-300 active:scale-95 whitespace-nowrap">
+                        View Blueprint
+                    </a>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <footer class="py-12 bg-white border-t border-[#eee] text-center">
+        <p class="text-sm font-medium text-zinc-500">© 2026 Storra Ecommerce System. Built by Blueprint Software.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const navbar = document.getElementById('navbar');
+            const sections = ['home', 'problem', 'features', 'pricing'];
+            const navLinks = document.querySelectorAll('.nav-link');
+
+            const handleScroll = () => {
+                // Navbar visual state
+                if (window.scrollY > 20) {
+                    navbar.classList.add('h-[72px]', 'shadow-sm', 'backdrop-blur-md', 'bg-[#f8f8f6]/90');
+                    navbar.classList.remove('h-[88px]', 'bg-[#f8f8f6]');
+                } else {
+                    navbar.classList.add('h-[88px]', 'bg-[#f8f8f6]');
+                    navbar.classList.remove('h-[72px]', 'shadow-sm', 'backdrop-blur-md', 'bg-[#f8f8f6]/90');
+                }
+
+                // Active section highlight
+                let current = '';
+                const scrollPosition = window.scrollY + 100;
+
+                sections.forEach((section) => {
+                    const element = document.getElementById(section);
+                    if (element) {
+                        const offsetTop = element.offsetTop;
+                        const height = element.offsetHeight;
+                        if (scrollPosition >= offsetTop && scrollPosition < offsetTop + height) {
+                            current = section;
+                        }
+                    }
+                });
+
+                navLinks.forEach(link => {
+                    if (link.getAttribute('href').includes(current)) {
+                        link.classList.add('text-[#E8873A]');
+                        link.classList.remove('text-slate-700');
+                    } else {
+                        link.classList.remove('text-[#E8873A]');
+                        link.classList.add('text-slate-700');
+                    }
+                });
+            };
+
+            window.addEventListener('scroll', handleScroll);
+            handleScroll(); // Init
+        });
+    </script>
+</body>
+</html>
