@@ -36,6 +36,71 @@
       .spark-gradient-up-purple {
         fill: url(#sk9333EA1);
       }
+
+      /* Stat Widgets Hover & Active Effects */
+      .stat-widget {
+        transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease, box-shadow 0.25s ease !important;
+        position: relative;
+        cursor: pointer;
+      }
+      .stat-widget:hover {
+        transform: translateY(-2px);
+      }
+      .stat-widget[data-stat="orders"]:hover {
+        border-color: rgba(232, 135, 58, 0.4) !important;
+        box-shadow: 0 8px 24px rgba(232, 135, 58, 0.12);
+      }
+      .stat-widget[data-stat="sales"]:hover {
+        border-color: rgba(34, 197, 94, 0.4) !important;
+        box-shadow: 0 8px 24px rgba(34, 197, 94, 0.12);
+      }
+      .stat-widget[data-stat="shipping"]:hover {
+        border-color: rgba(45, 212, 191, 0.4) !important;
+        box-shadow: 0 8px 24px rgba(45, 212, 191, 0.12);
+      }
+      .stat-widget[data-stat="growth"]:hover {
+        border-color: rgba(147, 51, 234, 0.4) !important;
+        box-shadow: 0 8px 24px rgba(147, 51, 234, 0.12);
+      }
+
+      /* Active Glow on counts while counting */
+      .stat-count {
+        font-variant-numeric: tabular-nums;
+        transition: text-shadow 0.3s ease, color 0.3s ease;
+      }
+      .stat-widget[data-stat="orders"] .stat-count.is-counting {
+        text-shadow: 0 0 16px rgba(232, 135, 58, 0.6);
+        color: #ffedd5 !important;
+      }
+      .stat-widget[data-stat="sales"] .stat-count.is-counting {
+        text-shadow: 0 0 16px rgba(34, 197, 94, 0.6);
+        color: #dcfce7 !important;
+      }
+      .stat-widget[data-stat="shipping"] .stat-count.is-counting {
+        text-shadow: 0 0 16px rgba(45, 212, 191, 0.6);
+        color: #ccfbf1 !important;
+      }
+      .stat-widget[data-stat="growth"] .stat-count.is-counting {
+        text-shadow: 0 0 16px rgba(147, 51, 234, 0.6);
+        color: #f3e8ff !important;
+      }
+
+      /* Sparkline Animations */
+      .spark-line {
+        stroke-dasharray: 220;
+        stroke-dashoffset: 220;
+        transition: stroke-dashoffset 1.6s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      .spark-area {
+        opacity: 0;
+        transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.3s;
+      }
+      .dashboard-loaded .spark-line {
+        stroke-dashoffset: 0;
+      }
+      .dashboard-loaded .spark-area {
+        opacity: 1;
+      }
     </style>
   </head>
   <body class="text-[#111] antialiased overflow-x-hidden">
@@ -404,6 +469,7 @@
                   "
                 >
                   <span
+                    class="inline-block animate-pulse"
                     style="
                       width: 5px;
                       height: 5px;
@@ -589,6 +655,8 @@
                   "
                 >
                   <div
+                    class="stat-widget"
+                    data-stat="orders"
                     style="
                       background: #1a1a1a;
                       border-radius: 10px;
@@ -602,6 +670,10 @@
                       Orders
                     </div>
                     <div
+                      class="stat-count"
+                      data-target="128"
+                      data-prefix=""
+                      data-suffix=""
                       style="
                         color: #fff;
                         font-size: 22px;
@@ -638,7 +710,7 @@
                       </defs>
                       <path
                         d="M0,30 L20,22 L40,26 L60,14 L80,18 L100,8 L120,12 L140,4 L140,32 L0,32 Z"
-                        class="spark-gradient-up-orange"
+                        class="spark-gradient-up-orange spark-area"
                       ></path>
                       <path
                         d="M0,30 L20,22 L40,26 L60,14 L80,18 L100,8 L120,12 L140,4"
@@ -647,10 +719,13 @@
                         stroke-width="1.5"
                         stroke-linecap="round"
                         stroke-linejoin="round"
+                        class="spark-line"
                       ></path>
                     </svg>
                   </div>
                   <div
+                    class="stat-widget"
+                    data-stat="sales"
                     style="
                       background: #1a1a1a;
                       border-radius: 10px;
@@ -664,6 +739,10 @@
                       Sales
                     </div>
                     <div
+                      class="stat-count"
+                      data-target="84"
+                      data-prefix="₹"
+                      data-suffix="K"
                       style="
                         color: #fff;
                         font-size: 22px;
@@ -700,7 +779,7 @@
                       </defs>
                       <path
                         d="M0,30 L20,22 L40,26 L60,14 L80,18 L100,8 L120,12 L140,4 L140,32 L0,32 Z"
-                        class="spark-gradient-up-green"
+                        class="spark-gradient-up-green spark-area"
                       ></path>
                       <path
                         d="M0,30 L20,22 L40,26 L60,14 L80,18 L100,8 L120,12 L140,4"
@@ -709,10 +788,13 @@
                         stroke-width="1.5"
                         stroke-linecap="round"
                         stroke-linejoin="round"
+                        class="spark-line"
                       ></path>
                     </svg>
                   </div>
                   <div
+                    class="stat-widget"
+                    data-stat="shipping"
                     style="
                       background: #1a1a1a;
                       border-radius: 10px;
@@ -726,6 +808,10 @@
                       Shipping
                     </div>
                     <div
+                      class="stat-count"
+                      data-target="42"
+                      data-prefix=""
+                      data-suffix=""
                       style="
                         color: #fff;
                         font-size: 22px;
@@ -762,7 +848,7 @@
                       </defs>
                       <path
                         d="M0,8 L20,14 L40,10 L60,20 L80,16 L100,24 L120,20 L140,28 L140,32 L0,32 Z"
-                        class="spark-gradient-down-teal"
+                        class="spark-gradient-down-teal spark-area"
                       ></path>
                       <path
                         d="M0,8 L20,14 L40,10 L60,20 L80,16 L100,24 L120,20 L140,28"
@@ -771,10 +857,13 @@
                         stroke-width="1.5"
                         stroke-linecap="round"
                         stroke-linejoin="round"
+                        class="spark-line"
                       ></path>
                     </svg>
                   </div>
                   <div
+                    class="stat-widget"
+                    data-stat="growth"
                     style="
                       background: #1a1a1a;
                       border-radius: 10px;
@@ -788,6 +877,10 @@
                       Growth
                     </div>
                     <div
+                      class="stat-count"
+                      data-target="96"
+                      data-prefix=""
+                      data-suffix="%"
                       style="
                         color: #fff;
                         font-size: 22px;
@@ -824,7 +917,7 @@
                       </defs>
                       <path
                         d="M0,30 L20,22 L40,26 L60,14 L80,18 L100,8 L120,12 L140,4 L140,32 L0,32 Z"
-                        class="spark-gradient-up-purple"
+                        class="spark-gradient-up-purple spark-area"
                       ></path>
                       <path
                         d="M0,30 L20,22 L40,26 L60,14 L80,18 L100,8 L120,12 L140,4"
@@ -833,6 +926,7 @@
                         stroke-width="1.5"
                         stroke-linecap="round"
                         stroke-linejoin="round"
+                        class="spark-line"
                       ></path>
                     </svg>
                   </div>
@@ -1975,12 +2069,15 @@
               platform costs.
             </p>
 
-            <a
-              href="#contact"
-              class="px-8 py-4 bg-transparent border border-[#111]/20 text-[#111] rounded-xl font-bold text-sm hover:bg-[#111] hover:text-white transition-all duration-300 active:scale-95"
-            >
-              Request Storra Access
-            </a>
+            <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+              <a
+                href="#contact"
+                class="px-8 py-4 bg-transparent border border-[#111]/20 text-[#111] rounded-xl font-bold text-sm hover:bg-[#111] hover:text-white transition-all duration-300 active:scale-95"
+              >
+                Request Storra Access
+              </a>
+              
+            </div>
           </div>
 
           <aside class="relative group">
@@ -1990,7 +2087,7 @@
             <div
               class="relative bg-[#fafafa] border border-[#eee] rounded-[32px] p-8 md:p-10 flex flex-col h-full shadow-[0_4px_20px_rgba(0,0,0,0.01)]"
             >
-              <div class="flex justify-between items-start mb-6">
+              <div class="flex justify-between items-start mb-4">
                 <strong class="text-2xl font-black text-[#111] tracking-tight"
                   >Lifetime</strong
                 >
@@ -1998,6 +2095,10 @@
                   class="px-3 py-1 bg-[#E8873A] text-white text-[10px] font-black rounded-md uppercase tracking-widest"
                   >Popular</span
                 >
+              </div>
+              <div class="mb-4 flex items-baseline gap-2">
+                <span class="text-4xl md:text-5xl font-black text-[#111] tracking-tight">₹37,500</span>
+                <span class="text-xs font-bold text-zinc-400 uppercase tracking-wider">/ one-time</span>
               </div>
               <p
                 class="text-[13px] leading-relaxed text-zinc-500 font-medium mb-8"
@@ -2211,24 +2312,30 @@
 
       <div class="container mx-auto max-w-[1100px] relative z-10">
         <article
-          class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-10 bg-white border border-[#eee] rounded-[40px] p-8 md:p-16 shadow-[0_12px_40px_rgba(0,0,0,0.03)] transition-all duration-300 hover:border-[#E8873A]/10"
+          class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-12 bg-white border border-[#eee] rounded-[40px] p-8 md:p-14 lg:p-16 shadow-[0_20px_60px_rgba(0,0,0,0.04)] relative overflow-hidden transition-all duration-300 hover:border-[#E8873A]/20"
         >
-          <div class="flex flex-col items-start text-left max-w-3xl">
+          <!-- Subtle decorative radial glow -->
+          <div
+            class="absolute -top-24 -left-24 w-96 h-96 bg-[radial-gradient(circle,rgba(232,135,58,0.06)_0%,transparent_70%)] pointer-events-none"
+          ></div>
+
+          <!-- Left Column: Compelling Messaging & Highlights -->
+          <div class="flex flex-col items-start text-left max-w-xl relative z-10">
             <div
-              class="inline-flex items-center gap-2 bg-[rgba(232,135,58,0.09)] border border-[rgba(232,135,58,0.22)] rounded-full px-3 py-1 mb-6"
+              class="inline-flex items-center gap-2 bg-[#E8873A]/10 border border-[#E8873A]/25 rounded-full px-3.5 py-1.5 mb-6"
             >
               <span
-                class="w-1.5 h-1.5 rounded-full bg-[#E8873A] inline-block shrink-0 animate-pulse"
+                class="w-2 h-2 rounded-full bg-[#E8873A] inline-block shrink-0 animate-ping"
               ></span>
               <span
-                class="text-[10px] text-[#E8873A] font-bold tracking-[0.09em] uppercase"
+                class="text-[11px] text-[#E8873A] font-extrabold tracking-wider uppercase"
                 >Built by Blueprint Software</span
               >
             </div>
 
             <h2
               id="contact-title"
-              class="text-3xl font-black text-[#111] sm:text-4xl md:text-5xl leading-[1.1] tracking-tight"
+              class="text-3xl sm:text-4xl md:text-5xl lg:text-[50px] font-black text-[#111] leading-[1.08] tracking-tight"
             >
               Launch your ecommerce system with
               <span
@@ -2238,32 +2345,108 @@
             </h2>
 
             <p
-              class="mt-5 text-sm md:text-base leading-relaxed text-[#666] font-medium max-w-2xl"
+              class="mt-6 text-base md:text-lg leading-relaxed text-[#555] font-medium"
             >
-              Storra is developed by Blueprint Software, For implementation,
-              customization or business inquiries, contact Blueprint Software.
+              Storra is engineered by Blueprint Software for founders who want complete store ownership, zero commissions, and tailored flexibility.
             </p>
 
-            <div
-              class="mt-6 flex items-center gap-2.5 text-sm md:text-base text-[#111] font-bold group"
-            >
-              <span class="text-[#E8873A] font-semibold">Phone:</span>
-              <a
-                href="tel:+9197788226340"
-                class="hover:text-[#E8873A] decoration-zinc-200 group-hover:decoration-[#E8873A] transition-all duration-200"
-              >
-                +91 97788 226340
-              </a>
+            <div class="mt-8 flex flex-col sm:flex-row gap-3.5 w-full sm:w-auto">
+              <div class="flex items-center gap-3 p-3.5 rounded-2xl bg-[#f8f8f6] border border-[#e5e5e5]">
+                <div class="w-8 h-8 rounded-xl bg-[#22c55e]/15 text-[#16a34a] flex items-center justify-center font-black text-sm">
+                  ✓
+                </div>
+                <div class="text-left">
+                  <span class="block text-xs font-black text-[#111]">Full Live Walkthrough</span>
+                  <span class="block text-[11px] font-semibold text-[#666]">Admin & store checkout</span>
+                </div>
+              </div>
+
+              <div class="flex items-center gap-3 p-3.5 rounded-2xl bg-[#f8f8f6] border border-[#e5e5e5]">
+                <div class="w-8 h-8 rounded-xl bg-[#E8873A]/15 text-[#E8873A] flex items-center justify-center font-black text-sm">
+                  ⚡
+                </div>
+                <div class="text-left">
+                  <span class="block text-xs font-black text-[#111]">Direct Connect</span>
+                  <span class="block text-[11px] font-semibold text-[#666]">Phone & WhatsApp</span>
+                </div>
+              </div>
             </div>
           </div>
 
-          <div class="flex-shrink-0">
-            <a
-              href="https://blueprintsoftware.in"
-              class="inline-flex items-center justify-center px-8 py-4 bg-[#111] border border-transparent text-white rounded-xl font-bold text-sm shadow-md hover:bg-[#E8873A] transition-all duration-300 active:scale-95 whitespace-nowrap"
-            >
-              View Blueprint
-            </a>
+          <!-- Right Column: THE BIG DEMO HERO CARD -->
+          <div class="w-full lg:w-[460px] shrink-0 relative z-10">
+            <div class="relative group">
+              <!-- Animated Ambient Glow Aura -->
+              <div
+                class="absolute -inset-2 bg-gradient-to-r from-[#E8873A] via-[#F0A05A] to-[#E8873A] rounded-[36px] opacity-25 group-hover:opacity-45 blur-2xl transition-all duration-500"
+              ></div>
+
+              <!-- Main Card Container -->
+              <div
+                class="relative bg-gradient-to-b from-[#181818] via-[#141414] to-[#0f0f0f] text-white rounded-[32px] p-7 sm:p-9 border border-white/10 shadow-[0_25px_60px_rgba(0,0,0,0.4)] flex flex-col gap-6"
+              >
+                <!-- Card Header -->
+                <div class="flex items-center justify-between pb-4 border-b border-white/10">
+                  <div class="inline-flex items-center gap-2 bg-[#22c55e]/15 border border-[#22c55e]/30 px-3 py-1.5 rounded-full">
+                    <span class="w-2 h-2 rounded-full bg-[#22c55e] animate-pulse"></span>
+                    <span class="text-[11px] font-black tracking-wider text-[#4ade80] uppercase">Live Demo Available</span>
+                  </div>
+                  <span class="text-xs font-bold text-zinc-400">Direct Connect</span>
+                </div>
+
+                <!-- Big Title Section -->
+                <div>
+                  <span class="text-xs font-extrabold uppercase tracking-widest text-[#E8873A] block mb-1">Schedule or Call Now</span>
+                  <h3 class="text-2xl sm:text-3xl font-black text-white tracking-tight leading-snug">
+                    Contact Us for Demo
+                  </h3>
+                  <p class="text-xs sm:text-[13px] text-zinc-400 mt-2 leading-relaxed font-medium">
+                    Connect directly with our engineering team for an instant walkthrough of the store, admin controls, and custom integration.
+                  </p>
+                </div>
+
+                <!-- BIG PRIMARY ACTION: Phone Call Button -->
+                <a
+                  href="tel:+919447303290"
+                  class="group/btn relative overflow-hidden flex items-center justify-between p-5 bg-gradient-to-r from-[#E8873A] via-[#f09346] to-[#E8873A] hover:from-[#d6762a] hover:to-[#e8873a] text-white rounded-2xl font-black shadow-[0_14px_35px_rgba(232,135,58,0.4)] hover:shadow-[0_18px_45px_rgba(232,135,58,0.55)] transition-all duration-300 hover:scale-[1.02] active:scale-95"
+                >
+                  <div class="flex items-center gap-4">
+                    <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-white/20 border border-white/30 flex items-center justify-center text-white shrink-0 group-hover/btn:rotate-12 group-hover/btn:scale-110 transition-all duration-300 shadow-inner">
+                      <svg class="w-6 h-6 sm:w-7 sm:h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                      </svg>
+                    </div>
+                    <div class="text-left">
+                      <span class="block text-[11px] font-extrabold uppercase tracking-widest text-white/80">Call for Instant Demo</span>
+                      <span class="text-xl sm:text-2xl font-black tracking-tight text-white block">+91 94473 03290</span>
+                    </div>
+                  </div>
+                  <div class="w-10 h-10 rounded-xl bg-white/15 border border-white/20 flex items-center justify-center shrink-0 group-hover/btn:translate-x-1.5 transition-transform">
+                    <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7" />
+                    </svg>
+                  </div>
+                </a>
+
+                <!-- SECONDARY ACTION: WhatsApp Chat -->
+                
+
+                <!-- Company Footnote -->
+                <div class="pt-2 flex items-center justify-between text-xs text-zinc-400 font-medium">
+                  <span>Blueprint Software</span>
+                  <a
+                    href="https://blueprintsoftware.in"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-[#E8873A] hover:text-[#f09346] font-bold hover:underline transition-colors flex items-center gap-1"
+                  >
+                    <span>View Blueprint</span>
+                    <span>→</span>
+                  </a>
+                </div>
+
+              </div>
+            </div>
           </div>
         </article>
       </div>
@@ -2276,6 +2459,70 @@
     </footer>
 
     <script>
+      // Active Count Animation on Browser Load for Each Dashboard Widget
+      const initWidgetCounters = () => {
+        const widgets = document.querySelectorAll(".stat-widget");
+        if (!widgets.length) return;
+
+        // Activate sparkline animations and dashboard loaded state
+        document.body.classList.add("dashboard-loaded");
+
+        // Animate counter for a specific widget element
+        const runCounter = (widget, isReplay = false) => {
+          const countEl = widget.querySelector(".stat-count");
+          if (!countEl) return;
+
+          const target = parseFloat(countEl.getAttribute("data-target") || "0");
+          const prefix = countEl.getAttribute("data-prefix") || "";
+          const suffix = countEl.getAttribute("data-suffix") || "";
+          const duration = isReplay ? 1000 : 1600;
+          let startTime = null;
+
+          countEl.classList.add("is-counting");
+          countEl.textContent = `${prefix}0${suffix}`;
+
+          const step = (timestamp) => {
+            if (!startTime) startTime = timestamp;
+            const elapsed = timestamp - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+
+            // Ease-out cubic: rapid start with a gentle settle
+            const easeOut = 1 - Math.pow(1 - progress, 3);
+            const current = Math.round(target * easeOut);
+
+            countEl.textContent = `${prefix}${current}${suffix}`;
+
+            if (progress < 1) {
+              requestAnimationFrame(step);
+            } else {
+              countEl.textContent = `${prefix}${target}${suffix}`;
+              setTimeout(() => {
+                countEl.classList.remove("is-counting");
+              }, 250);
+            }
+          };
+
+          requestAnimationFrame(step);
+        };
+
+        // Initialize and animate each widget on browser load
+        widgets.forEach((widget) => {
+          runCounter(widget, false);
+
+          // Click to re-activate count on interaction
+          widget.addEventListener("click", () => {
+            runCounter(widget, true);
+          });
+        });
+      };
+
+      // Trigger counter animation on browser load
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", initWidgetCounters);
+      } else {
+        initWidgetCounters();
+      }
+
       document.addEventListener("DOMContentLoaded", () => {
         const navbar = document.getElementById("navbar");
         const sections = ["home", "problem", "features", "pricing"];
